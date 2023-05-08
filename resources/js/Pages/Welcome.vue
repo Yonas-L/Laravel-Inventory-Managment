@@ -18,7 +18,7 @@ const props = defineProps({
 </script>
 <template>
     <!--    Shared errors form session-->
-          <!-- !! choose branch from the global ($pages) property -->
+          <!-- !! Show Global Messages -->
              <div v-if="$page.props.flash.successMessage">
         <div class="animate__animated animate__backInLeft alert bg-green-200 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full alert-dismissible fade show"
             role="alert">

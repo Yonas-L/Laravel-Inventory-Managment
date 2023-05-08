@@ -73,22 +73,22 @@ function submit() {
                     <InputError class="mt-2" :message="form.errors.avatar" />
                 </div>
                 <div class="flex justify-between">
-                    <div class="mt-4">
+                    <div class="mt-4 mr-5">
                         <InputLabel for="role" value="Role" />
                         <select name="role" id="role" data-te-select-init>
+                            
                             <option value="admin">Admin</option>
                             <option value="user">User</option>
                         </select>
                     </div>
                     <div class="mt-4">
                         <InputLabel for="branch" value="Branch" />
-                        <select name="branch" id="branch" data-te-select-init>
-                            <div
+                        <select name="branch" id="branch" >
+                           <option 
                                 v-for="branch in $page.props.location.branch"
-                                :key="branch.id"
-                            >
-                                <h1>Yonas</h1>
-                            </div>
+                                :key="branch.id">
+                                <h1>{{branch.id}}</h1>
+                            </option>
                         </select>
                     </div>
                 </div>

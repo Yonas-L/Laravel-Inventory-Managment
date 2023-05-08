@@ -36,12 +36,13 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'avatar'=>'required|string',
-            'role' => 'required',
-            'email' => 'required|string|email|unique:users',
-            'branch'=>'required',
-            'password' => 'required|confirmed|Password::defaults()',
+       
+            'role'=>'required',
+            'password' => [
+    'required',
+    'confirmed',
+    Password::defaults(),
+],
 
         ]);
         //! user avatar storage logic
@@ -58,6 +59,7 @@ class RegisteredUserController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
+        dd($user);
        
         
 
