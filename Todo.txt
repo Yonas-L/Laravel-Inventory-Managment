@@ -1,0 +1,9 @@
+#* To do for the application
+1- Make the cruds for the inventory managment
+2- Make a UI with tailwind and some animations
+3- Add a feature for (Global-search{user and products}, Product-filter{date and price})
+4- Add accsess controll middleware (Role based autorization)
+5- Add email verification on Authentication
+6- Add and implement a Forgot password functionality
+7- Make a realtime chat functionality
+8- 

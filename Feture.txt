@@ -1,0 +1,7 @@
+#* New Feture
+1- A sales persone must be able to ask other admins through  realtime chat
+2- Notification must be visible for unread messages
+#* To do for task 1
+- Add a branch and avatar fields on user registration
+- Build all the ui needed for the chat as planned
+- Search branch and select who you whant to chat and talk on the go
