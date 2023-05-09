@@ -6,8 +6,6 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
 // Initialization for ES Users
-import { Select, initTE } from "tw-elements";
-
 const form = useForm({
     name: "",
     avatar: "",
@@ -75,21 +73,27 @@ function submit() {
                 <div class="flex justify-between">
                     <div class="mt-4 mr-5">
                         <InputLabel for="role" value="Role" />
-                        <select name="role" id="role" data-te-select-init>
-                            
+                        <select v-model="form.role" id="role">
                             <option value="admin">Admin</option>
                             <option value="user">User</option>
                         </select>
+                        <InputError class="mt-2" :message="form.errors.role" />
                     </div>
                     <div class="mt-4">
                         <InputLabel for="branch" value="Branch" />
-                        <select name="branch" id="branch" >
-                           <option 
+                        <select v-model="form.branch" id="branch">
+                            <option
                                 v-for="branch in $page.props.location.branch"
-                                :key="branch.id">
-                                <h1>{{branch.id}}</h1>
+                                :key="branch.id"
+                                :value="branch.id"
+                            >
+                                <h1>{{ branch.city }}</h1>
                             </option>
                         </select>
+                        <InputError
+                            class="mt-2"
+                            :message="form.errors.branch"
+                        />
                     </div>
                 </div>
 

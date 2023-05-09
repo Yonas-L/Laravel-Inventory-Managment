@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rules\Unique;
 use Inertia\Inertia;
 
 class RegisteredUserController extends Controller
@@ -36,15 +37,14 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-       
-            'role'=>'required',
-            'password' => [
-    'required',
-    'confirmed',
-    Password::defaults(),
-],
 
+            'name' => ['required'],
+            'password' => ['required', 'confirmed', Password::defaults()],
+            'role' => ['required'],
+            'branch' => ['required'],
+            'email' => ['required', 'email', 'unique:users']
         ]);
+
         //! user avatar storage logic
         $avatar_path = '';
         if ($request->hasFile('avatar')) {
@@ -53,15 +53,13 @@ class RegisteredUserController extends Controller
         // ! user registration only
         $user = User::create([
             'name' => $request->name,
-            'branch'=> $request->branch,
-            'avatar'=>'storage/' . $avatar_path,
+            'branch' => $request->branch,
+            'avatar' => 'storage/' . $avatar_path,
             'email' => $request->email,
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
         dd($user);
-       
-        
 
         // event that listens to a user being registered
         event(new Registered($user));
