@@ -1,9 +1,15 @@
-#* To do for the application
-1- Make the cruds for the inventory managment
-2- Make a UI with tailwind and some animations
-3- Add a feature for (Global-search{user and products}, Product-filter{date and price})
-4- Add accsess controll middleware (Role based autorization)
-5- Add email verification on Authentication
-6- Add and implement a Forgot password functionality
-7- Make a realtime chat functionality
-8- 
+# Todo: for the application
+1-  Make the cruds for the inventory managment #* Done 
+2-  Make a UI with tailwind and some animations #* Done
+3-  Add a feature for (Global-search{user and products}, Product-filter{date and price}) #* Done
+4-  Add accsess controll middleware (Role based autorization) #* Done
+5-  Add email verification on Authentication #* Done
+6-  Add and implement a Forgot password functionality #* Done
+7-  Make a realtime chat functionality (search branch and send message to a worker) #? Ongoing
+8-  Make a Notification pop up for tracking activity of the message #? Ongoing
+9-  Make a sign-in option using 3rd parti API' #? Ongoing
+10- Make a functionality for making a queed job for downloading user data as CSV|XLS  #? Ongoing
+11- Make the application Responsive for 3 devices. #? Ongoing
+12- Build a Test for fetures and API's. #? Ongoing
+13- Dockerise the whole application. #? Ongoing
+14- Deploy the application on HEROKU!! #? Ongoing
