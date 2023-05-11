@@ -23,6 +23,6 @@ createInertiaApp({  title: (title) => `${title} - ${appName}`,
 });
 
 InertiaProgress.init({
-    color: 'white',
+    color: 'black',
     showSpinner:true,
 });

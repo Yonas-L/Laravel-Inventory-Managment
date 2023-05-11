@@ -74,10 +74,7 @@ const props = defineProps({
                 </div>
             </div>
               <!-- ** A place to add the modal -->
-              
                    <ChatRoom class="flex justify-center" />
-            
-           
             <div class="flex justify-end m-4">
                 <ChatBot data-bs-ripple  data-bs-toggle="modal" data-bs-target="#chatRoom" />
             </div>
