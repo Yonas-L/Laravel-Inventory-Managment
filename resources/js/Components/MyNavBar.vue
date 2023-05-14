@@ -23,7 +23,7 @@ const searchAdmin = ()=>{
   return{searchUser}}
 </script>
 <template>
-<nav class=" bg-green-900 relative w-full flex flex-wrap items-center justify-between p-4 mb-10">
+<nav class=" bg-green-900 relative w-full flex flex-wrap items-center justify-between p-2 ">
   <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
       <!-- Application Logo  -->
     <div class="hover:opacity-20">
