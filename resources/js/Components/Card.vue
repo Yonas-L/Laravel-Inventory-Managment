@@ -3,8 +3,8 @@
         <div class="border border-spacing-2 px-4 py-4 rounded-lg shadow-sm border-opacity-25 shadow-zinc-700 bg-white">
             <!-- the flex-row-1 -->
             <div class="flex justify-around">
-                <!-- Avatar component -->
-                <Avatar class="animate__animated animate__fadeInDown" v-bind:Image="props.products.image" />
+                <!-- Product Image component -->
+                <ProductImage class="animate__animated animate__fadeInDown" v-bind:Image="props.products.image" />
                 <div class="flex py-6 flex-col">
                     <div class="grow-0 h-2">
                         <h5 class="text-gray-900 text-xl text-start font-serif mx-2">
@@ -57,7 +57,7 @@
 
 <script setup>
     import Button from "../Components/MyButton.vue";
-    import Avatar from "./Avatar.vue";
+    import ProductImage from "./ProductImage.vue";
     import MyModal from "../Components/MyModal.vue";
     import {
         Inertia

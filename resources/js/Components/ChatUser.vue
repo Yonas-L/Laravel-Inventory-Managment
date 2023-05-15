@@ -1,17 +1,16 @@
-<script setup>
-import UserCard from "@/Components/UserCard.vue";
-</script>
+<script setup></script>
 <template>
     <div
-        id="chatRoom"
-        class="modal fade"
+        id="chatUser"
+        class="modal z-[3000] fade"
         aria-labelledby="editProduct"
         aria-modal="true"
         role="dialog"
         aria-hidden="true"
+        
     >
         <div
-            class="modal-dialog modal-dialog-scrollable h-96 modal-lg pointer-events-auto"
+            class="modal-dialog modal-dialog-scrollable modal-dialog-centered h-96 modal-lg pointer-events-auto"
         >
             <div
                 class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
@@ -23,11 +22,8 @@ import UserCard from "@/Components/UserCard.vue";
                     <h5
                         class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
                     >
-                        The Room
+                        Let't Talk
                     </h5>
-                    <h5
-                        class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
-                    ></h5>
                     <button
                         type="button"
                         class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
@@ -35,25 +31,10 @@ import UserCard from "@/Components/UserCard.vue";
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="mx-auto border-b border-gray-200 mb-1 container">
-                    <div class="flex justify-start place-items-center m-2">
-                        <input
-                            class="h-10 rounded-md w-auto border-green-700"
-                            type="text"
-                            placeholder="Search"
-                        />
-                        <i class="bi bi-search text-2xl mx-2" />
-                    </div>
-                </div>
 
                 <div class="modal-body text-sm text-justify">
-                    <!--! User Component -->
-                    <div class="m-2">
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                    </div>
+                    <!--! User Chat Component -->
+                    <h1>Lets talk Yoni!</h1>
                 </div>
                 <div
                     class="modal-footer p-2 border-t border-gray-200 font-thin text-sm text-center"
