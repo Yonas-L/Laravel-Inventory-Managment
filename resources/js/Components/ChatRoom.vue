@@ -1,20 +1,22 @@
 <script setup>
 import UserCard from "@/Components/UserCard.vue";
+import ChatUser from "@/Components/ChatUser.vue";
 </script>
 <template>
+    <ChatUser />
     <div
         id="chatRoom"
-        class="modal fade"
+        class="modal animate__animated animate__slideInUp animate_fast fade"
         aria-labelledby="editProduct"
         aria-modal="true"
         role="dialog"
         aria-hidden="true"
     >
         <div
-            class="modal-dialog modal-dialog-scrollable h-96 modal-lg pointer-events-auto"
+            class="modal-dialog fixed top-52 -right-1 mx-8 modal-md pointer-events-auto"
         >
             <div
-                class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
+                class="modal-content modal-dialog-scrollable border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
             >
                 <div
                     class="modal-header flex items-center justify-between p-4 border-b border-gray-200 rounded-t-md"
@@ -23,17 +25,13 @@ import UserCard from "@/Components/UserCard.vue";
                     <h5
                         class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
                     >
-                        The Room
+                        Welcome To The Room
                     </h5>
-                    <h5
-                        class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
-                    ></h5>
-                    <button
-                        type="button"
-                        class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+
+                    <i
                         data-bs-dismiss="modal"
-                        aria-label="Close"
-                    ></button>
+                        class="cursor-pointer hover:-rotate-45 hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 btn-close box-content text-lg p-1 text-black border-none rounded-sm opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                    />
                 </div>
                 <div class="mx-auto border-b border-gray-200 mb-1 container">
                     <div class="flex justify-start place-items-center m-2">
@@ -46,9 +44,20 @@ import UserCard from "@/Components/UserCard.vue";
                     </div>
                 </div>
 
-                <div class="modal-body text-sm text-justify">
+                <div class="modal-body max-h-72 text-sm text-justify">
                     <!--! User Component -->
                     <div class="m-2">
+                        <UserCard
+                            data-bs-toggle="modal"
+                            data-bs-target="#chatUser"
+                        />
+                        <UserCard />
+                        <UserCard />
+                        <UserCard />
+                        <UserCard />
+                        <UserCard />
+                        <UserCard />
+                        <UserCard />
                         <UserCard />
                         <UserCard />
                         <UserCard />
@@ -56,10 +65,10 @@ import UserCard from "@/Components/UserCard.vue";
                     </div>
                 </div>
                 <div
-                    class="modal-footer p-2 border-t border-gray-200 font-thin text-sm text-center"
+                    class="modal-footer p-2 border-t border-gray-200 font-thin text-sm"
                 >
                     <div class="divide-x-2">
-                        <h1>This is footer</h1>
+                        <h1 class="text-center">This is footer</h1>
                     </div>
                 </div>
             </div>

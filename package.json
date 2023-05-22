@@ -30,7 +30,6 @@
         "bootstrap-icons": "^1.9.1",
         "mdb-vue-ui-kit": "^3.0.0",
         "moment": "^2.29.4",
-        "tw-elements": "^1.0.0-alpha12",
-        "vuetify": "^2.6.11"
+        "tw-elements": "^1.0.0-alpha12"
     }
 }

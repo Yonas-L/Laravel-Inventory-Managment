@@ -27,7 +27,7 @@ const filterPrice = async () => {
             type="date"
             name="date"
             id="date"
-            class="border-gray-300 text-2xl bg-gray-100 text-opacity-30 w-50 h-10 cursor-pointer hover:underline decoration-1 text-emerald-700"
+            class="border-gray-300 text-2xl bg-gray-100 text-opacity-30 w-auto h-10 cursor-pointer hover:underline decoration-1 text-emerald-700"
         />
     </div>
     <div>

@@ -9,6 +9,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: 'resources/js/app.js',
+            // input: 'resources/css/app.css',
             ssr: 'resources/js/ssr.js',
             refresh: true,
         }),
