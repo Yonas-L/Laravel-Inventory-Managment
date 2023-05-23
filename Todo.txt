@@ -5,7 +5,7 @@
 4-  Add accsess controll middleware (Role based autorization) #* Done
 5-  Add email verification on Authentication #* Done
 6-  Add and implement a Forgot password functionality #* Done
-7-  Make a realtime chat UI() #? Ongoing
+7-  Make a realtime chat UI() #* Done
 8-  Make a realtime chat functionality (search branch and send message to a worker) #? Ongoing
 9-  Make a Notification pop up for tracking activity of the message #? Ongoing
 10- Make a sign-in option using 3rd parti API' #? Ongoing

@@ -52,12 +52,10 @@ const edit = (id) => {
                     >
                         Edit Product Form for {{ props.products.name }}
                     </h5>
-                    <button
-                        type="button"
-                        class="btn-close hover:bg-slate-700 box-content w-4 h-4 p-1 text-black border-none rounded-lg text-red opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                    <i
                         data-bs-dismiss="modal"
-                        aria-label="Close"
-                    ></button>
+                        class="cursor-pointer hover:-rotate-45 hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 btn-close box-content text-lg p-1 text-black border-none rounded-sm opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                    />
                   
                 </div>
                 <div class="flex">
