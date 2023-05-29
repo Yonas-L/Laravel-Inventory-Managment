@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\ProductSearchController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,12 +23,14 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     $products = Product::orderBy('created_at', 'DESC')->get();
+    $simpleUsers = User::all();
     $analytics = $products->count();
     return inertia::render(
         'Welcome',
         [
             'products' => $products,
-            'analytics' => $analytics
+            'analytics' => $analytics,
+            'simpleUsers' => $simpleUsers
         ]
     );
 })->name('home')->middleware('auth', 'verified');

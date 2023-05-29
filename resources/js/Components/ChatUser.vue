@@ -3,10 +3,14 @@ import UserAvatar from "@/Components/UserAvatar.vue";
 import SentBox from "./SentBox.vue";
 import RecivedBox from "./RecivedBox.vue";
 import UserCard from "./UserCard.vue";
+ const props=defineProps({
+    singleUser: Object,
+});
 </script>
 <template>
+    
     <div
-        id="chatUser"
+        :id="'_'+props.singleUser.email"
         class="modal animate__animated animate__fadeIn fade"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -28,12 +32,13 @@ import UserCard from "./UserCard.vue";
                     <div class="w-48 space-x-2 flex justify-start">
                         <div class="ml-2 mt-2">
                             <UserAvatar />
+                            {{ props.singleUser[0]}}
                         </div>
                         <div
                             class="place-items-center mt-4 text-sm text-slate-500"
                         >
                             <h1 class="font-serif font-extralight text-justify">
-                                {{ $page.props.auth.user.name }}
+                                {{ props.singleUser.name }}
                             </h1>
                             <h1 class="font-extralight font-serif text-justify">
                                 Active 3 second ago

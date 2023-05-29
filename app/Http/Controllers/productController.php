@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\User;
 use Inertia\Response;
 
 class productController extends Controller
@@ -29,11 +30,13 @@ class productController extends Controller
 
         $products = Product::all();
         $analytics = $products->count();
+        $simpleUsers = User::all();
         return inertia(
             'Welcome',
             [
                 'products' => $products,
-                'analytics' => $analytics
+                'analytics' => $analytics,
+                'simpleUsers' => $simpleUsers
             ]
         );
     }

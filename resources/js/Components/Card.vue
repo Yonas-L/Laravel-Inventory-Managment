@@ -23,7 +23,7 @@ const destroy = (id) => {
 </script>
 
 <template>
-    <div class="animate__animated animate__zoomInDown">
+    <div class="animate__animated animate__zoomIn">
         <div
             class="container flex flex-col border border-spacing-2 my-auto py-2 rounded-xl  shadow-sm border-opacity-25 shadow-zinc-700 bg-white"
         >
@@ -31,7 +31,7 @@ const destroy = (id) => {
             <div class="flex justify-between">
                 <!-- Product Image component -->
                 <ProductImage
-                    class="animate__animated animate__fadeInDown"
+                    class="animate__animated animate__fadeIn animate__slow"
                     v-bind:Image="props.products.image"
                 />
                 <div class="flex py-6 flex-col">

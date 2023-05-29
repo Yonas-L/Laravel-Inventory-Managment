@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Branch;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -39,8 +40,11 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
-            'location' =>[
+            'location' => [
                 'branch' => Branch::all()
+            ],
+            'userLists' => [
+                'simpleUsers' => User::get()
             ],
 
             'ziggy' => function () use ($request) {

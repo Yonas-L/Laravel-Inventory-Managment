@@ -14,6 +14,7 @@ const props = defineProps({
     products: Object,
     searchedUser: Object,
     analytics: String,
+    simpleUsers: Object,
 });
 </script>
 <template>
@@ -86,22 +87,6 @@ const props = defineProps({
                 class="grid justify-center overflow-y-scroll gap-y-4 gap-x-4 mx-4 h-96 sm:grid-cols-1 md:grid-cols-2"
             >
                 <div v-for="product in props.products" :key="product.id">
-                    <div v-if="$page.props.flash.errorMessage">
-                        <div
-                            class="animate__animated animate__backInLeft alert bg-red-200 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full alert-dismissible fade show"
-                            role="alert"
-                        >
-                            <strong class="mr-1 text-red-600"
-                                >{{ $page.props.flash.errorMessage }}
-                            </strong>
-                            <button
-                                type="button"
-                                class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
-                                data-bs-dismiss="alert"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                    </div>
                     <Card :products="product" />
                 </div>
             </div>
@@ -109,7 +94,7 @@ const props = defineProps({
     </div>
 
     <!-- This is the chat room modal -->
-    <ChatRoom />
+    <ChatRoom :simpleUsers="props.simpleUsers" />
 
     <!-- This is the Floating Action button -->
     <div class="fixed flex fixed-bottom m-6 justify-end p-2">
