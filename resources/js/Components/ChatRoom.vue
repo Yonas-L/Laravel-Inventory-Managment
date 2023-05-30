@@ -1,14 +1,26 @@
 <script setup>
 import UserCard from "@/Components/UserCard.vue";
 import ChatUser from "@/Components/ChatUser.vue";
+import { useForm } from "@inertiajs/inertia-vue3";
 const props = defineProps({
     simpleUsers: Object,
 });
+
+// create a form reciver
+const form = useForm({
+    branchName: null,
+});
+// serch for a branch request
+const searchBranch = () => {
+    form.get(route("findUserBranch"), {
+        preserveState: true,
+    });
+    return { searchBranch };
+};
 </script>
 
 <template>
     <div
-        
         id="chatRoom"
         class="modal animate__animated animate__slideInUp animate_fast fade"
         aria-labelledby="editProduct"
@@ -40,7 +52,8 @@ const props = defineProps({
                 <div class="mx-auto border-b border-gray-200 mb-1 container">
                     <div class="flex justify-start place-items-center m-2">
                         <input
-                            v-model="text"
+                            @keyup="searchBranch"
+                            v-model="form.branchName"
                             name="branchName"
                             id="branchName"
                             class="h-10 rounded-md w-auto border-green-700"
@@ -57,6 +70,7 @@ const props = defineProps({
                     <div class="m-2">
                         <div v-for="user in props.simpleUsers" :key="user.id">
                             <UserCard
+                                class="animate__animated animate__zoomIn"
                                 data-bs-toggle="modal"
                                 :data-bs-target="'#_' + user.email"
                                 :userInfo="user"

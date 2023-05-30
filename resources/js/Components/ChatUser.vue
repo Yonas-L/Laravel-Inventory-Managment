@@ -3,14 +3,13 @@ import UserAvatar from "@/Components/UserAvatar.vue";
 import SentBox from "./SentBox.vue";
 import RecivedBox from "./RecivedBox.vue";
 import UserCard from "./UserCard.vue";
- const props=defineProps({
+const props = defineProps({
     singleUser: Object,
 });
 </script>
 <template>
-    
     <div
-        :id="'_'+props.singleUser.email"
+        :id="'_' + props.singleUser.email"
         class="modal animate__animated animate__fadeIn fade"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -32,7 +31,6 @@ import UserCard from "./UserCard.vue";
                     <div class="w-48 space-x-2 flex justify-start">
                         <div class="ml-2 mt-2">
                             <UserAvatar />
-                            {{ props.singleUser[0]}}
                         </div>
                         <div
                             class="place-items-center mt-4 text-sm text-slate-500"
@@ -79,7 +77,7 @@ import UserCard from "./UserCard.vue";
                     </div>
                     <!-- ! Send button -->
                     <i
-                        class="cursor-pointer hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 bi bi-arrow-right box-content text-2xl p-1 text-green-800 border-none rounded-full opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 ml-2 hover:text-black hover:opacity-75 hover:no-underline"
+                        class="cursor-pointer w-auto h-auto hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 bi bi-arrow-right box-content text-2xl p-1 text-green-800 border-none rounded-full opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 ml-2 hover:text-black hover:opacity-75 hover:no-underline"
                     />
                     <!-- ! Send button -->
                     <i

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
@@ -64,5 +65,7 @@ Route::get('/search', [ProductSearchController::class, 'SearchAdmin'])->name('se
 Route::get('/searchProducts', [ProductSearchController::class, 'searchProducts'])->name('searchUser');
 Route::get('/searchByDate', [ProductSearchController::class, 'searchProductsByDate'])->name('searchByDate');
 Route::get('/priceRange', [ProductSearchController::class, 'filterPrice'])->name('filterPrice');
+// Route for branch related task
+Route::get('/searchBranch',[BranchController::class,'findBranch'])->name('findUserBranch');
 
 require __DIR__ . '/auth.php';

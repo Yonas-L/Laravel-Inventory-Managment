@@ -6,7 +6,7 @@
 5-  Add email verification on Authentication #* Done
 6-  Add and implement a Forgot password functionality #* Done
 7-  Make a realtime chat UI() #* Done
-8-  Users can be searched by branch  #? Ongoing
+8-  Users can be searched by branch  #* Done
 9-  Users can chat with anyone they want privately #? Ongoing
 10- Users can check their online status (Online or sometime ago) #?Ongoing
 11- Make a Notification pop up for tracking activity of the message #? Ongoing
