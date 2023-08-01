@@ -5,6 +5,7 @@ import RecivedBox from "./RecivedBox.vue";
 import UserCard from "./UserCard.vue";
 const props = defineProps({
     singleUser: Object,
+    chatMessage:Object,
 });
 </script>
 <template>

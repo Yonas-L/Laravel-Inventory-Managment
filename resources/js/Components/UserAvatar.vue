@@ -6,7 +6,7 @@ defineProps({
 
 </script>
 <template>
-  <img :src="$page.props.auth.user.avatar"  class="rounded-full wrap w-12 h-12"  alt="Image"/>
+  <img :src="Image"  class="rounded-full wrap w-12 h-12"  alt="Image"/>
 </template>
 
 

@@ -14,7 +14,7 @@ const props = defineProps({
 
         <div class="w-48 space-x-2 flex justify-start">
             <div class="ml-2 mt-2">
-                <UserAvatar :Image="props.userInfo.avatar" class="" />
+                <UserAvatar class="" />
             </div>
             <div class="place-items-center m-2 text-sm text-slate-500">
                 <h1 class=" font-light text-justify">

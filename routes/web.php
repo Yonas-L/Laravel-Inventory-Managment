@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ChatController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
@@ -9,6 +10,7 @@ use App\Models\Product;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\ProductSearchController;
 use App\Models\User;
+use App\Providers\UserHasBeenVerified;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -50,6 +52,7 @@ Route::get('/email/verify', function () {
 
 // Email verification process
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+
     $request->fulfill();
     return redirect('/home');
 })->middleware(['auth', 'signed'])->name('verification.verify');
@@ -66,6 +69,11 @@ Route::get('/searchProducts', [ProductSearchController::class, 'searchProducts']
 Route::get('/searchByDate', [ProductSearchController::class, 'searchProductsByDate'])->name('searchByDate');
 Route::get('/priceRange', [ProductSearchController::class, 'filterPrice'])->name('filterPrice');
 // Route for branch related task
-Route::get('/searchBranch',[BranchController::class,'findBranch'])->name('findUserBranch');
+Route::get('/searchBranch', [BranchController::class, 'findBranch'])->name('findUserBranch');
+
+// Route for the message sending endpoint
+Route::get('chatRoom/{toId}',[ChatController::class,'index'])->name('myConversations');
+Route::post('chatRoom/sendMessage/{reciverId}',[ChatController::class,'sendMessage'])->name('sendMessage');
+
 
 require __DIR__ . '/auth.php';

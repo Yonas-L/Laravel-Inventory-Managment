@@ -1,6 +1,6 @@
 <script setup>
 import UserCard from "@/Components/UserCard.vue";
-import ChatUser from "@/Components/ChatUser.vue";
+import ChatUser from "@/Pages/Components/ChatUser.vue";
 import { useForm } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
 // import route from "vendor/tightenco/ziggy/src/js";
@@ -11,7 +11,7 @@ const props = defineProps({
 // create a form reciver
 const form = useForm({
     branchName: null,
-    toId:null
+    toId: null,
 });
 // serch for a branch request
 const searchBranch = () => {
@@ -22,7 +22,7 @@ const searchBranch = () => {
 };
 // Open the chatRoom modal
 const openRoom = (toId) => {
-    return form.get(route("roomPortal", toId), {
+    return form.get(route("myConversations", toId), {
         preserveState: true,
     });
 };

@@ -1,7 +1,6 @@
 // import './bootstrap';
 // import '../css/app.css';
 import 'animate.css';
-import * as te from "tw-elements";
 // import 'mdb-vue-ui-kit/css/mdb.min.css';
 
 import {createApp, h} from 'vue';
