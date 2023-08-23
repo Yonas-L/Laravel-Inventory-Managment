@@ -4,10 +4,34 @@ import SentBox from "@/Pages/Components/SentBox.vue";
 import RecivedBox from "@/Pages/Components/RecivedBox.vue";
 import UserCard from "@/Pages/Components/UserCard.vue";
 import { Inertia } from "@inertiajs/inertia";
-import { useForm } from "@inertiajs/inertia-vue3";
+
+import Echo from "laravel-echo";
+import { ref, computed, reactive } from "vue";
+import Pusher from "pusher-js";
+import { useForm, usePage } from "@inertiajs/inertia-vue3";
 const props = defineProps({
     singleUser: Object,
 });
+
+const page = usePage();
+
+const user = computed(() => props.singleUser);
+
+const messages = reactive({});
+
+// Push the new message to the messages array
+const handleMessageCreated = (data) => {
+    messages.value.map(data);
+};
+
+/**
+ * creating a web socket connection or a HandShake
+ */
+window.Echo.private(`my-chat`+props.singleUser.id).listen(
+    "MessageCreated",
+    handleMessageCreated
+);
+
 //getting the data from the input
 const form = useForm({
     text: null,
@@ -44,6 +68,7 @@ const sendMessage = (reciverId) => {
                         <div class="ml-2 mt-2">
                             <UserAvatar :Image="props.singleUser.avatar" />
                         </div>
+                        <header>You are logged in as: {{ user.id }}</header>
                         <div
                             class="place-items-center mt-4 text-sm text-slate-500"
                         >
@@ -62,19 +87,15 @@ const sendMessage = (reciverId) => {
                         class="cursor-pointer hover:-rotate-90 hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 bi bi-arrow-up box-content text-2xl p-1 text-black border-none rounded-full opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 ml-2 hover:text-black hover:opacity-75 hover:no-underline"
                     />
                 </div>
+                <div>
+                    <h1>{{messages }}</h1>
+                </div>
 
                 <div class="modal-body max-h-72">
                     <!--! Sent and Recived  chatBoxes -->
-                    <div
-                        v-for="message in $page.props.flash.conversations"
-                        :key="message.id"
-                    >
+                    <div v-for="message in $page.props.flash.conversations" :key="message.id">
                         <!--* render right  -->
-                        <div
-                            v-if="
-                                $page.props.auth.user.id === message.from
-                            "
-                        >
+                        <div v-if="$page.props.auth.user.id === message.from">
                             <SentBox :sentMessage="message" />
                         </div>
                         <!--* render left  -->

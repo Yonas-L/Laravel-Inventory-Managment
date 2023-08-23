@@ -1,18 +1,21 @@
 # Todo: for the application
-1-  Make the cruds for the inventory managment #* Done 
-2-  Make a UI with tailwind and some animations #* Done
-3-  Add a feature for (Global-search{user and products}, Product-filter{date and price}) #* Done
-4-  Add accsess controll middleware (Role based autorization) #* Done
-5-  Add email verification on Authentication #* Done
-6-  Add and implement a Forgot password functionality #* Done
-7-  Make a realtime chat UI() #* Done
-8-  Users can be searched by branch  #* Done
-9-  Users can chat with anyone they want privately #? Ongoing
-10- Users can check their online status (Online or sometime ago) #?Ongoing
-11- Make a Notification pop up for tracking activity of the message #? Ongoing
-12- Make a sign-in option using 3rd parti API' #? Ongoing
-13- Make a functionality for making a queed job for downloading user data as CSV|XLS  #? Ongoing
-14- Make the application Responsive for 3 devices. #? Ongoing
-15- Build a Test for fetures and API's. #? Ongoing
-16- Dockerise the whole application. #? Ongoing
-17- Deploy the application on HEROKU!! #? Ongoing
+Make the cruds for the inventory managment #* Done 
+Make a UI with tailwind and some animations #* Done
+Add a feature for (Global-search{user and products}, Product-filter{date and price}) #* Done
+Add accsess controll middleware (Role based autorization) #* Done
+Add email verification on Authentication #* Done
+Sending welcome email #* Done
+Queuing emails #* Done
+Add and implement a Forgot password functionality #* Done
+Make a realtime chat UI() #* Done
+Users can be searched by branch  #* Done
+Users can chat with anyone they want  Tradetionaly #* Done
+Users can chat with anyone they want in realtime #? Ongoing
+Users can check their online status (Online or sometime ago) #?Ongoing
+Make a Notification pop up for tracking activity of the message #? Ongoing
+Make a sign-in option using 3rd parti API' #? Ongoing
+Make a functionality for making a queed job for downloading user data as CSV|XLS  #? Ongoing
+Make the application Responsive for 3 devices. #? Ongoing
+Build a Test for fetures and API's. #? Ongoing
+Dockerise the whole application. #? Ongoing
+Deploy the application on HEROKU!! #? Ongoing

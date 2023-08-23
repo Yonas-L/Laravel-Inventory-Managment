@@ -22,6 +22,7 @@ const searchBranch = () => {
 };
 // Open the chatRoom modal
 const openRoom = (toId) => {
+    alert('hi');
     return form.get(route("roomPortal", toId), {
         preserveState: true,
     });
@@ -50,7 +51,7 @@ const openRoom = (toId) => {
                     <h5
                         class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
                     >
-                        Welcome To The Room
+                        Welcome To The
                     </h5>
 
                     <i

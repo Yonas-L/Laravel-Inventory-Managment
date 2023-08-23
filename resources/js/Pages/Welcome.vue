@@ -3,7 +3,7 @@ import MyNavBar from "@/Components/MyNavBar.vue";
 import Form from "@/Components/Form.vue";
 import ChatBot from "@/Components/ChatBotModal.vue";
 import ChatRoom from "@/Pages/Components/ChatRoom.vue";
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 import Analytics from "@/Components/Analytics.vue";
 import FilterOptions from "@/Components/FilterOptions.vue";
 import Card from "@/Components/Card.vue";
@@ -93,12 +93,13 @@ const props = defineProps({
         </div>
     </div>
 
-    <!-- This is the chat room modal -->
-    <ChatRoom :simpleUsers="props.simpleUsers" />
+  
 
-    <!-- This is the Floating Action button -->
+    <!--!! This is the Floating Action button -->
     <div class="fixed flex fixed-bottom m-6 justify-end p-2">
-        <ChatBot data-bs-toggle="modal" data-bs-target="#chatRoom" />
+        <Link href="/chatify">
+            <ChatBot />
+        </Link>
     </div>
     <!-- Footer section -->
     <Footer />

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Termwind\Components\Dd;
+use App\Events\MessageCreated;
+use Illuminate\Support\Facades\Broadcast;
+use Inertia\Inertia;
+use Pusher\Pusher;
+
+use function Termwind\render;
 
 class ChatController extends Controller
 {
@@ -15,6 +21,7 @@ class ChatController extends Controller
     public function index($toId)
     {
         $messages = Chat::where('from', Auth::user()->id)->where('to', $toId)->orWhere('from', $toId)->where('to', Auth::user()->id)->get();
+        event(new MessageCreated($messages));
         return redirect()->back()->with(
             'conversations',
             $messages,
@@ -37,6 +44,10 @@ class ChatController extends Controller
         $chatMessage->save();
         // dd($chatMessage);
         // Trigger and broadcast the MessageSent event.
-        return to_route('home')->with('conversations',$chatMessage);
+        event(new MessageCreated($chatMessage));
+        return redirect()->back()->with(
+            'conversations',
+            $chatMessage,
+        );
     }
 }

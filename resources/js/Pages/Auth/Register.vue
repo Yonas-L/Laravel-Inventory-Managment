@@ -31,7 +31,7 @@ function submit() {
         <Head title="Register" />
         <div class="">
             <form @submit.prevent="submit">
-                <div>
+                <div class="mt-4">
                     <InputLabel for="name" value="Name" />
                     <TextInput
                         id="name"

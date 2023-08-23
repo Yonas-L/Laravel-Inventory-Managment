@@ -3,6 +3,8 @@ import UserCard from "@/Components/UserCard.vue";
 import ChatUser from "@/Pages/Components/ChatUser.vue";
 import { useForm } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
+import Echo from "laravel-echo";
+
 // import route from "vendor/tightenco/ziggy/src/js";
 const props = defineProps({
     simpleUsers: Object,
@@ -50,7 +52,7 @@ const openRoom = (toId) => {
                     <h5
                         class="text-xl text-center font-serif text-green-900 font-normal leading-normal"
                     >
-                        Welcome To The Room
+                        Hello {{ $page.props.auth.user.name }}
                     </h5>
 
                     <i
