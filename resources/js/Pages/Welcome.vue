@@ -8,6 +8,7 @@ import Analytics from "@/Components/Analytics.vue";
 import FilterOptions from "@/Components/FilterOptions.vue";
 import Card from "@/Components/Card.vue";
 import Footer from "@/Components/Footer.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 // receiving data form backend
 const props = defineProps({
@@ -92,8 +93,6 @@ const props = defineProps({
             </div>
         </div>
     </div>
-
-  
 
     <!--!! This is the Floating Action button -->
     <div class="fixed flex fixed-bottom m-6 justify-end p-2">

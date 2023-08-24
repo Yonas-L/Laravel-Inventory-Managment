@@ -10,9 +10,8 @@ Add and implement a Forgot password functionality #* Done
 Make a realtime chat UI() #* Done
 Users can be searched by branch  #* Done
 Users can chat with anyone they want  Tradetionaly #* Done
-Users can chat with anyone they want in realtime #? Ongoing
-Users can check their online status (Online or sometime ago) #?Ongoing
-Make a Notification pop up for tracking activity of the message #? Ongoing
+Users can chat with anyone they want in realtime #* Done
+Users can check their online status (Online or sometime ago) #* Done
 Make a sign-in option using 3rd parti API' #? Ongoing
 Make a functionality for making a queed job for downloading user data as CSV|XLS  #? Ongoing
 Make the application Responsive for 3 devices. #? Ongoing
