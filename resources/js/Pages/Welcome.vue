@@ -8,7 +8,6 @@ import Analytics from "@/Components/Analytics.vue";
 import FilterOptions from "@/Components/FilterOptions.vue";
 import Card from "@/Components/Card.vue";
 import Footer from "@/Components/Footer.vue";
-import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 // receiving data form backend
 const props = defineProps({
@@ -22,6 +21,7 @@ const props = defineProps({
     <Head title="Welcome" />
     <!--Navbar Component -->
     <MyNavBar v-bind:searchedUser="props.searchedUser" />
+
     <!--    Shared errors form session-->
     <div class="container flex justify-center bg-red-500 place-items-center">
         <!-- !! Show Global Messages -->
@@ -41,6 +41,7 @@ const props = defineProps({
                 ></button>
             </div>
         </div>
+
         <div v-if="$page.props.flash.errorMessage">
             <div
                 class="animate__animated animate__backInLeft alert bg-red-200 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full alert-dismissible fade show"

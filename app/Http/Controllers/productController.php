@@ -19,6 +19,7 @@ class productController extends Controller
     {
         $this->middleware('isAdmin', ['except' => 'index']);
         $this->middleware(['auth', 'verified'], ['only' => 'index']);
+        notify()->success('Welcone brother');
     }
     /**
      * Display a listing of the resource.
@@ -31,6 +32,7 @@ class productController extends Controller
         $products = Product::all();
         $analytics = $products->count();
         $simpleUsers = User::all();
+        notify()->success('Welcone brother');
         return inertia(
             'Welcome',
             [
@@ -69,7 +71,8 @@ class productController extends Controller
         $newProduct->image = 'storage/' . $image_path;
         $newProduct->price = $request->price;
         $newProduct->save();
-        return redirect()->back()->with('successMessage', 'Product added successfully!!');
+        notify()->success('Product Added Sucsessfully ⚡️');
+        return to_route('home');
     }
 
 
@@ -106,17 +109,18 @@ class productController extends Controller
                 $productExists->image = 'storage/' . $image_path;
                 $productExists->price = $request->price;
                 $productExists->save();
-                //                dd($image_path);
-                return redirect()->route('home')->with('successMessage', 'Product Updated successfully!!');
+               
+                notify()->success('Product updated successfully');
+                return redirect()->route('home');
             }
             $productExists->name = $request->name;
             $productExists->category = $request->category;
             $productExists->image = $image_path;
             $productExists->price = $request->price;
             $productExists->save();
-            //            dd($image_path);
-            return redirect()->route('home')->with('successMessage', 'Product Updated successfully!!');
-        } else     return redirect()->back()->with('errorMessage', 'product not found!!');
+            notify()->success('Product updated successfully');
+            return redirect()->route('home');
+        } else     return redirect()->back();
     }
 
     /**
@@ -130,7 +134,8 @@ class productController extends Controller
         //find a specific product
         $productExists = Product::find($id);
         $productExists->delete();
-        return redirect()->back()->with('successMessage', 'You have successfully deleted ' . ' ' . $productExists->name . ' ' . '!');
+        notify()->error('Product Deleted!');
+        return redirect()->back();
     }
 
     /**

@@ -28,6 +28,7 @@ Route::get('/', function () {
     $products = Product::orderBy('created_at', 'DESC')->get();
     $simpleUsers = User::all();
     $analytics = $products->count();
+    notify()->success('Welcone brother');
     return inertia::render(
         'Welcome',
         [
@@ -72,8 +73,8 @@ Route::get('/priceRange', [ProductSearchController::class, 'filterPrice'])->name
 Route::get('/searchBranch', [BranchController::class, 'findBranch'])->name('findUserBranch');
 
 // Route for the message sending endpoint
-Route::get('chatRoom/{toId}',[ChatController::class,'index'])->name('myConversations');
-Route::post('chatRoom/sendMessage/{reciverId}',[ChatController::class,'sendMessage'])->name('sendMessage');
+Route::get('chatRoom/{toId}', [ChatController::class, 'index'])->name('myConversations');
+Route::post('chatRoom/sendMessage/{reciverId}', [ChatController::class, 'sendMessage'])->name('sendMessage');
 
 
 require __DIR__ . '/auth.php';

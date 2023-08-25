@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'file_size_limit' => 10485760,
+ 
     /*
     |-------------------------------------
     | Messenger display name
@@ -25,7 +25,7 @@ return [
     'routes' => [
         'prefix' => env('CHATIFY_ROUTES_PREFIX', 'chatify'),
         'middleware' => env('CHATIFY_ROUTES_MIDDLEWARE', ['web', 'auth']),
-        'namespace' => env('CHATIFY_ROUTES_NAMESPACE', 'App\Http\Controllers\vendor\Chatify'),
+        'namespace' => env('CHATIFY_ROUTES_NAMESPACE', 'Chatify\Http\Controllers'),
     ],
     'api_routes' => [
         'prefix' => env('CHATIFY_API_ROUTES_PREFIX', 'chatify/api'),
@@ -87,7 +87,7 @@ return [
         'download_route_name' => 'attachments.download',
         'allowed_images' => (array) ['png', 'jpg', 'jpeg', 'gif'],
         'allowed_files' => (array) ['zip', 'rar', 'txt', 'xlsx'],
-        'max_upload_size' => 10485760// MB
+        'max_upload_size' => 150// MB
     ],
 
     

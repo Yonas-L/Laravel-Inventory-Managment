@@ -30,9 +30,29 @@ function submit() {
     <GuestLayout>
         <Head title="Register" />
         <div class="">
+            <div class="flex mt-4 ">
+                <!--* social login options -->
+
+                <div
+                    class="container rounded-lg outline-1 p-1 outline flex justify-evenly place-items-center"
+                >
+                    <div
+                        class="container p-2 rounded-full h-10 w-10 bg-black"
+                    ></div>
+                    <div
+                        class="container p-2 rounded-full h-10 w-10 bg-black"
+                    ></div>
+                    <div
+                        class="container p-2 rounded-full h-10 w-10 bg-black"
+                    ></div>
+                </div>
+            </div>
+            <h1 class="text-center mt-4 text-xl font-thin font-serif">
+                __________ Or __________
+            </h1>
             <form @submit.prevent="submit">
                 <div class="mt-4">
-                    <InputLabel for="name" value="Name" />
+                    <InputLabel for="name" value="Names" />
                     <TextInput
                         id="name"
                         type="text"

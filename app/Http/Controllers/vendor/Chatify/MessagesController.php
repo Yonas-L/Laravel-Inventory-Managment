@@ -1,7 +1,7 @@
 <?php
 
-// namespace Chatify\Http\Controllers;
-namespace App\Http\Controllers\vendor\Chatify;
+namespace Chatify\Http\Controllers;
+
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
