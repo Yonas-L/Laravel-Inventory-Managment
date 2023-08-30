@@ -30,42 +30,22 @@ function submit() {
     <GuestLayout>
         <Head title="Register" />
         <div class="">
-            <div class="flex mt-4">
+            <div class="flex place-items-center justify-center mt-4">
                 <!--* social login options -->
+                <a href="social-login">
+                    <div
+                        class="container w-fit hover:shadow-lg bg-dark text-white hover:shadow-green-800 hover:bg-opacity-75 duration-500 cursor-pointer hover:text-dark font-bold rounded-lg p-2 gap-2 outline flex justify-evenly place-items-center"
+                    >
+                        <img
+                            class="w-7 h-7"
+                            src="storage/CompanyImages/google.png"
+                            alt="Googel-logo"
+                            loading="lazy"
+                        />
 
-                <div
-                    class="container rounded-lg outline-1 p-1 outline flex justify-evenly place-items-center"
+                        <h1>Continue with Google</h1>
+                    </div></a
                 >
-                    <Link href="products">
-                        <div
-                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
-                        >
-                            <h1
-                                class="duration-700 text-white font-serif bi-google"
-                            ></h1>
-                        </div>
-                    </Link>
-
-                    <Link>
-                        <div
-                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
-                        >
-                            <h1
-                                class="duration-700 text-white font-serif bi-github"
-                            ></h1>
-                        </div>
-                    </Link>
-
-                    <Link>
-                        <div
-                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
-                        >
-                            <h1
-                                class="duration-700 text-white font-serif bi-telegram"
-                            ></h1>
-                        </div>
-                    </Link>
-                </div>
             </div>
             <h1 class="text-center mt-4 text-xl font-thin font-serif">
                 __________ Or __________

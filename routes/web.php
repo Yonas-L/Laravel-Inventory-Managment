@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\ProductSearchController;
+use App\Http\Controllers\SignInWithGoogleController;
 use App\Models\User;
 use App\Providers\UserHasBeenVerified;
 use Illuminate\Support\Facades\Auth;
@@ -77,6 +78,10 @@ Route::get('/searchBranch', [BranchController::class, 'findBranch'])->name('find
 // Route for the message sending endpoint
 Route::get('chatRoom/{toId}', [ChatController::class, 'index'])->name('myConversations');
 Route::post('chatRoom/sendMessage/{reciverId}', [ChatController::class, 'sendMessage'])->name('sendMessage');
+
+// Route for social login using google
+Route::get('social-login',[SignInWithGoogleController::class,'redirectToGoogle'])->name('signInWithGoogle');
+Route::get('auth/google/call-back',[SignInWithGoogleController::class,'handleGoogleCallback']);
 
 
 require __DIR__ . '/auth.php';

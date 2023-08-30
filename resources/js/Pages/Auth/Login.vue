@@ -31,6 +31,27 @@ const submit = () => {
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
+        <div class="flex place-items-center justify-center mt-4">
+                <!--* social login options -->
+                <a href="social-login">
+                    <div
+                        class="container w-fit hover:shadow-lg bg-dark text-white hover:shadow-green-800 hover:bg-opacity-75 duration-500 cursor-pointer hover:text-dark font-bold rounded-lg p-2 gap-2 outline flex justify-evenly place-items-center"
+                    >
+                        <img
+                            class="w-7 h-7"
+                            src="storage/CompanyImages/google.png"
+                            alt="Googel-logo"
+                            loading="lazy"
+                        />
+
+                        <h1>Continue with Google</h1>
+                    </div></a
+                    
+                >
+            </div>
+            <h1 class="text-center mt-4 text-xl font-thin font-serif">
+                __________ Or __________
+            </h1>
 
         <form @submit.prevent="submit">
             <div>

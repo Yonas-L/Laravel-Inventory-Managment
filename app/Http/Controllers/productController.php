@@ -73,7 +73,7 @@ class productController extends Controller
         $newProduct->price = $request->price;
         $newProduct->save();
         flash()->translate('ar')->addSuccess('Product with name ' . ' ' . $newProduct->name . ' added Successfully ', 'New Item Added', [
-            'position' => 'bottom-left',
+            'position' => 'top-center',
 
         ]);
         return to_route('home');
@@ -106,7 +106,7 @@ class productController extends Controller
         if ($productExists) {
 
             if ($request->hasFile('image')) {
-                $image_path = $request->file('image')->store('/avatars', 'public');
+                $image_path = $request->file('image')->store('/user-avatars', 'public');
 
                 $productExists->name = $request->name;
                 $productExists->category = $request->category;
@@ -114,7 +114,7 @@ class productController extends Controller
                 $productExists->price = $request->price;
                 $productExists->save();
 
-                flash()->addSuccess('Product info has been updated with a new information.', 'Information Updated!!');
+                flash()->addInfo('Product info has been changed.', 'Information Updated!!');
                 return redirect()->route('home');
             }
             $productExists->name = $request->name;
@@ -122,7 +122,7 @@ class productController extends Controller
             $productExists->image = $image_path;
             $productExists->price = $request->price;
             $productExists->save();
-            flash()->addSuccess('Product info has been updated with a new information.', 'Information Updated!!');
+            flash()->addInfo('Product info has been changed.', 'Information Updated!!');
             return redirect()->route('home');
         } else     return redirect()->back()->with('messages
         ');

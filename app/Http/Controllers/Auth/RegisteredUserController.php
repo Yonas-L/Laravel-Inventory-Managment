@@ -59,11 +59,10 @@ class RegisteredUserController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
-        
+
         // event that listens to a user being registered
         event(new Registered($user));
         Auth::login($user);
-        notify()->success('Welcome to Laravel Notify ⚡️');
         return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -3,14 +3,12 @@ import MyNavBar from "@/Components/MyNavBar.vue";
 import flasher from "@flasher/flasher";
 import Form from "@/Components/Form.vue";
 import ChatBot from "@/Components/ChatBotModal.vue";
-import ChatRoom from "@/Pages/Components/ChatRoom.vue";
-import { Head, Link, usePage } from "@inertiajs/inertia-vue3";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 import Analytics from "@/Components/Analytics.vue";
 import FilterOptions from "@/Components/FilterOptions.vue";
 import Card from "@/Components/Card.vue";
 import Footer from "@/Components/Footer.vue";
 import { watch } from "vue";
-import { computed } from "vue";
 
 // receiving data form backend
 const props = defineProps({
@@ -30,6 +28,7 @@ watch(
     // watching for changes in the product list (props)
 );
 </script>
+
 <template>
     <Head title="Welcome" />
 
