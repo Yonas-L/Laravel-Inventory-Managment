@@ -30,21 +30,41 @@ function submit() {
     <GuestLayout>
         <Head title="Register" />
         <div class="">
-            <div class="flex mt-4 ">
+            <div class="flex mt-4">
                 <!--* social login options -->
 
                 <div
                     class="container rounded-lg outline-1 p-1 outline flex justify-evenly place-items-center"
                 >
-                    <div
-                        class="container p-2 rounded-full h-10 w-10 bg-black"
-                    ></div>
-                    <div
-                        class="container p-2 rounded-full h-10 w-10 bg-black"
-                    ></div>
-                    <div
-                        class="container p-2 rounded-full h-10 w-10 bg-black"
-                    ></div>
+                    <Link href="products">
+                        <div
+                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
+                        >
+                            <h1
+                                class="duration-700 text-white font-serif bi-google"
+                            ></h1>
+                        </div>
+                    </Link>
+
+                    <Link>
+                        <div
+                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
+                        >
+                            <h1
+                                class="duration-700 text-white font-serif bi-github"
+                            ></h1>
+                        </div>
+                    </Link>
+
+                    <Link>
+                        <div
+                            class="container shadow-md shadow-black flex justify-center place-items-center cursor-pointer p-2 rounded-full h-10 w-10 bg-black"
+                        >
+                            <h1
+                                class="duration-700 text-white font-serif bi-telegram"
+                            ></h1>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <h1 class="text-center mt-4 text-xl font-thin font-serif">
@@ -93,6 +113,7 @@ function submit() {
                 <div class="flex justify-between">
                     <div class="mt-4 mr-5">
                         <InputLabel for="role" value="Role" />
+
                         <select v-model="form.role" id="role">
                             <option value="admin">Admin</option>
                             <option value="user">User</option>

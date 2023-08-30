@@ -37,6 +37,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request)
     {
         return array_merge(parent::share($request), [
+            'messages' => flash()->render([], 'array'),
             'auth' => [
                 'user' => $request->user(),
             ],
@@ -52,11 +53,6 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
-            'flash' => [
-                'conversations'=>session('conversations'),
-                'successMessage' => session('successMessage'),
-                'errorMessage' => session('errorMessage')
-            ]
         ]);
     }
 }

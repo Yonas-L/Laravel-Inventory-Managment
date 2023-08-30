@@ -29,7 +29,7 @@
 </head>
 
 <body class=" bg-gray-50">
-    <x-notify::notify />
+
     <main>
         @inertia
     </main>

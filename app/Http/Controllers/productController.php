@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class productController extends Controller
@@ -19,7 +20,6 @@ class productController extends Controller
     {
         $this->middleware('isAdmin', ['except' => 'index']);
         $this->middleware(['auth', 'verified'], ['only' => 'index']);
-        notify()->success('Welcone brother');
     }
     /**
      * Display a listing of the resource.
@@ -32,7 +32,8 @@ class productController extends Controller
         $products = Product::all();
         $analytics = $products->count();
         $simpleUsers = User::all();
-        notify()->success('Welcone brother');
+
+
         return inertia(
             'Welcome',
             [
@@ -71,7 +72,10 @@ class productController extends Controller
         $newProduct->image = 'storage/' . $image_path;
         $newProduct->price = $request->price;
         $newProduct->save();
-        notify()->success('Product Added Sucsessfully ⚡️');
+        flash()->translate('ar')->addSuccess('Product with name ' . ' ' . $newProduct->name . ' added Successfully ', 'New Item Added', [
+            'position' => 'bottom-left',
+
+        ]);
         return to_route('home');
     }
 
@@ -109,8 +113,8 @@ class productController extends Controller
                 $productExists->image = 'storage/' . $image_path;
                 $productExists->price = $request->price;
                 $productExists->save();
-               
-                notify()->success('Product updated successfully');
+
+                flash()->addSuccess('Product info has been updated with a new information.', 'Information Updated!!');
                 return redirect()->route('home');
             }
             $productExists->name = $request->name;
@@ -118,9 +122,10 @@ class productController extends Controller
             $productExists->image = $image_path;
             $productExists->price = $request->price;
             $productExists->save();
-            notify()->success('Product updated successfully');
+            flash()->addSuccess('Product info has been updated with a new information.', 'Information Updated!!');
             return redirect()->route('home');
-        } else     return redirect()->back();
+        } else     return redirect()->back()->with('messages
+        ');
     }
 
     /**
@@ -134,7 +139,7 @@ class productController extends Controller
         //find a specific product
         $productExists = Product::find($id);
         $productExists->delete();
-        notify()->error('Product Deleted!');
+        flash()->addError('Product has been removed form the database!.', 'Product Deleted!!');
         return redirect()->back();
     }
 

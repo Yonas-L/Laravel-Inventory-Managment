@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Providers\UserHasBeenVerified;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,8 @@ Route::get('/', function () {
     $products = Product::orderBy('created_at', 'DESC')->get();
     $simpleUsers = User::all();
     $analytics = $products->count();
-    notify()->success('Welcone brother');
+    // flash("Welcome Mr ".Auth::user()->name);
+    
     return inertia::render(
         'Welcome',
         [
