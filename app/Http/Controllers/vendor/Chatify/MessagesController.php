@@ -386,6 +386,7 @@ class MessagesController extends Controller
     {
         // delete
         $delete = Chatify::deleteConversation($request['id']);
+    flash()->addError('Deleted ','deletedddd!!!!');
 
         // send the response
         return Response::json([

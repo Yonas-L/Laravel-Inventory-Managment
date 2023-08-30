@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 
 class ProductSearchController extends Controller
@@ -69,5 +70,21 @@ class ProductSearchController extends Controller
                 'products' => $priceInRange,
             ]);
         }
+    }
+
+    /**
+     *  Report generation trigger
+     *  @param somthing;
+     */
+    public function generateReport(): RedirectResponse
+    {
+        $products = Product::all();
+        sleep(10);
+        //flash a look out Notification here.
+        flash()->addInfo('We Will Notify You When We Are Done.', 'Generating Report.');
+
+        //dispatch the Job for processing report here
+
+        return to_route('home');
     }
 }

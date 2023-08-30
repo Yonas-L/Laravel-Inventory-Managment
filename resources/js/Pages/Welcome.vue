@@ -43,7 +43,7 @@ watch(
                 Add Products
             </h1>
             <Form />
-            <Analytics :analytics="props.analytics" />
+            <Analytics :messages="messages" :analytics="props.analytics" />
         </div>
         <div class="grid text-center">
             <div class="flex justify-center mx-auto my-auto">

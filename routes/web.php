@@ -31,7 +31,7 @@ Route::get('/', function () {
     $simpleUsers = User::all();
     $analytics = $products->count();
     // flash("Welcome Mr ".Auth::user()->name);
-    
+
     return inertia::render(
         'Welcome',
         [
@@ -80,8 +80,11 @@ Route::get('chatRoom/{toId}', [ChatController::class, 'index'])->name('myConvers
 Route::post('chatRoom/sendMessage/{reciverId}', [ChatController::class, 'sendMessage'])->name('sendMessage');
 
 // Route for social login using google
-Route::get('social-login',[SignInWithGoogleController::class,'redirectToGoogle'])->name('signInWithGoogle');
-Route::get('auth/google/call-back',[SignInWithGoogleController::class,'handleGoogleCallback']);
+Route::get('social-login', [SignInWithGoogleController::class, 'redirectToGoogle'])->name('signInWithGoogle');
+Route::get('auth/google/call-back', [SignInWithGoogleController::class, 'handleGoogleCallback']);
+
+// Route for report generatoins
+Route::get('generate-report', [ProductSearchController::class, 'generateReport'])->middleware('auth')->name('productReport');
 
 
 require __DIR__ . '/auth.php';
