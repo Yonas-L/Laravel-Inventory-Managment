@@ -18,6 +18,7 @@ const props = defineProps({
     simpleUsers: Object,
     messages: Object,
 });
+flasher.render(props.messages);
 
 // shared error or success flash notification messages
 watch(
@@ -38,20 +39,27 @@ watch(
     <div class="grid grid-cols-2">
         <div class="flex flex-col">
             <h1
-                class="hover:animate__animated animate__zoomInDown p-1 text-3xl mb-3 font-bold text-center cursor-pointer underline decoration-1 text-emerald-600"
+                class="hover:animate__animated animate__zoomInDown p-1 font-serif text-3xl mb-3 text-center cursor-pointer underline decoration-1 text-emerald-600"
             >
                 Add Products
             </h1>
             <Form />
-            <Analytics :messages="messages" :analytics="props.analytics" />
+            <!-- <Analytics :messages="messages" :analytics="props.analytics" /> -->
         </div>
         <div class="grid text-center">
-            <div class="flex justify-center mx-auto my-auto">
+            <div
+                class="flex place-items-center gap-3 justify-center mx-auto my-auto"
+            >
                 <h1
-                    class="p-1 text-3xl font-bold cursor-pointer underline decoration-1 text-emerald-600"
+                    class="p-1 text-3xl font-serif cursor-pointer text-emerald-600"
                 >
-                    Items In Stock
+                    Items In Stock ({{ props.analytics }})
                 </h1>
+                <a :href="route('export')">
+                    <h1
+                        class="tp-1 text-2xl font-serif cursor-pointer underline decoration-1 text-emerald-600 bi bi-download"
+                    ></h1>
+                </a>
             </div>
             <div
                 class="mx-auto my-auto gap-x-20 flex justify-between place-items-center"

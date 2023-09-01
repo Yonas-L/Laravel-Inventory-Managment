@@ -15,9 +15,9 @@ flasher.render(props.messages);
         <h1 class="m-10 font-serif text-xl text-center text-green-900">
             {{ props.analytics }} Items in store
         </h1>
-        <Link :href="route('productReport')">
+        <a :href="route('export')">
             <h1 class="text-center text-green-900 bi bi-download"></h1>
-        </Link>
+        </a>
     </div>
 
     <!-- <h1 class="my-4">{{ $analytics }}</h1> -->

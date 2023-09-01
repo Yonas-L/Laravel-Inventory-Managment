@@ -96,6 +96,7 @@
 import { useForm } from "@inertiajs/inertia-vue3";
 import MyButton from "./MyButton.vue";
 
+
 const form = useForm({
     name: null,
     category: null,

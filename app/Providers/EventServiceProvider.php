@@ -7,6 +7,8 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Events\MessageCreated;
+use App\Events\ReportHasBeenRequested;
+use App\Listeners\GenerateReport;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,9 +24,7 @@ class EventServiceProvider extends ServiceProvider
         UserHasBeenVerified::class => [
             SendWelcomeNotification::class
         ],
-        MessageCreated::class => [
 
-        ]
     ];
 
     /**

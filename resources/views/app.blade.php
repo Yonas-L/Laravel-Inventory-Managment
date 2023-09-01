@@ -10,7 +10,7 @@
 
     <!-- Fonts and styles -->
     <!-- <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="/resources/css/coustom.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Scripts -->
@@ -19,7 +19,7 @@
 
 
     @routes
-    @vite('resources/css/bootstrap.js')
+
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
 

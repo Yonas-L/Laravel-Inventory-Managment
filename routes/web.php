@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\ProductSearchController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SignInWithGoogleController;
 use App\Models\User;
 use App\Providers\UserHasBeenVerified;
@@ -84,7 +85,8 @@ Route::get('social-login', [SignInWithGoogleController::class, 'redirectToGoogle
 Route::get('auth/google/call-back', [SignInWithGoogleController::class, 'handleGoogleCallback']);
 
 // Route for report generatoins
-Route::get('generate-report', [ProductSearchController::class, 'generateReport'])->middleware('auth')->name('productReport');
+Route::get('export', [ReportController::class, 'export'])->middleware('auth')->name('export');
+// Route::get('import', [ReportController::class, 'import'])->middleware('auth')->name('import');
 
 
 require __DIR__ . '/auth.php';
