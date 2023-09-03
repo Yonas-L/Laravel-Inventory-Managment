@@ -1,6 +1,6 @@
 <template>
     <div
-        class="shadow-xl shadow-emerald-300 sm:scale-105 md:scale-105 md:scale-x-110 sm:scale-x-125 bg-white rounded-xl p-7"
+        class="shadow-xl shadow-emerald-300  sm:scale-105 md:scale-105 md:scale-x-110 sm:scale-x-125 bg-white rounded-xl p-7"
     >
         <form @submit.prevent>
             <div class="form-floating mb-4 mt-4">

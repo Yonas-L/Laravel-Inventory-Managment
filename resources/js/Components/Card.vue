@@ -25,53 +25,19 @@ const destroy = (id) => {
 <template>
     <div class="animate__animated animate__zoomIn">
         <div
-            class="  hover:shadow-md duration-1000 outline outline-1 hover:outline-emerald-300 bg-white transition-all hover:shadow-emerald-300 rounded-xl"
+            class="p-1.5 m-auto rounded-e-full  hover:shadow-md duration-1000 outline outline-1 hover:outline-emerald-300 bg-white transition-all hover:shadow-emerald-300 sm:rounded-xl md:rounded-xl"
         >
-            <!-- the flex-row-1 -->
-            <div class="flex justify-between place-items-center">
-                <!-- Product Image component -->
+            <!-- Image and Delete btn in one group 1 -->
+            <div class="flex justify-between place-items-stretch">
                 <ProductImage
-                    class="animate__animated animate__fadeIn object-cover animate__slow"
+                    class="mt-2 animate__animated animate__fadeIn object-cover animate__slow"
                     v-bind:Image="props.products.image"
                 />
-                <div
-                    class="container place-items-start max-h-screen object-fill flex flex-col m-auto flex-wrap"
-                >
-                    <h5
-                        class="text-gray-900 text-xl text-start font-serif mx-2"
-                    >
-                        {{ props.products.name }}
-                    </h5>
-                    <h5
-                        class="text-gray-900 text-sm text-start font-light mx-2"
-                    >
-                        {{ props.products.category }}
-                    </h5>
-                    <h5
-                        class="text-gray-900 text-sm text-start font-light mx-2"
-                    >
-                        ETB
-                        {{
-                            Intl.NumberFormat("en-US").format(
-                                props.products.price
-                            )
-                        }}
-                    </h5>
-                    <h5
-                        class="text-gray-900 text-sm text-start font-light mx-2"
-                    >
-                        {{ date }}
-                    </h5>
-                </div>
-
-                <!-- <div class="">
-                  
-                    </div> -->
-                <!--button for deleting a product -->
+                <!-- button for deleting a product -->
                 <div v-if="$page.props.auth.user.role == 'admin'">
                     <i
                         @click="destroy(props.products.id)"
-                        class="text-6xl text-green-900 cursor-pointer bi bi-x-circle text-opacity-30 hover:text-opacity-100 hover:text-red-900 hover:animate-pulse"
+                        class="text-3xl text-green-900 cursor-pointer bi bi-x-circle text-opacity-30 hover:text-opacity-100 hover:text-red-900 hover:animate-pulse"
                     ></i>
                 </div>
                 <div v-else>
@@ -80,7 +46,35 @@ const destroy = (id) => {
                     ></i>
                 </div>
             </div>
-            <div class="flex justify-center place-items-center">
+            <!-- Product detail in a grid -->
+            <div class="grid grid-cols-1 p-2">
+                <h5
+                    class="text-gray-900 text-sm  text-start font-bold font-serif mx-2"
+                >
+                    {{ props.products.name }}
+                </h5>
+                <h5
+                    class="text-gray-600 text-sm text-start font-extralight font-serif mx-2"
+                >
+                    {{ props.products.category }}
+                </h5>
+
+                <h5
+                    class="text-gray-600 text-sm text-start font-extralight font-serif mx-2"
+                >
+                    {{ date }}
+                </h5>
+                <h5
+                    class="text-gray-600 text-sm text-start font-extralight  font-serif mx-2"
+                >
+                    ETB
+                    {{
+                        Intl.NumberFormat("en-US").format(props.products.price)
+                    }}
+                </h5>
+            </div>
+            <!-- Edit button in a flex -->
+            <div class="flex justify-center p-2 place-items-center">
                 <div v-if="$page.props.auth.user.role == 'admin'">
                     <button
                         data-bs-toggle="modal"

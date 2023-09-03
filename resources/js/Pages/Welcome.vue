@@ -36,7 +36,7 @@ watch(
     <MyNavBar v-bind:searchedUser="props.searchedUser" />
 
     <div class="grid grid-cols-1 sm:grid-cols-1 md:mx-6 md:grid-cols-2">
-        <div class="m-auto animate__animated animate__fadeIn animate__slow">
+        <div class="m-auto animate__animated animate__fadeInLeft  animate__slow">
             <h1 class="font-serif text-3xl text-center m-4 text-emerald-400">
                 Add Products
             </h1>
