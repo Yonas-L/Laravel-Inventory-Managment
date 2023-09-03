@@ -31,45 +31,39 @@ watch(
 </script>
 
 <template>
-    <Head title="Welcome" />
-
-    <!--Navbar Component -->
+    <Head title="Welcome Page" />
+    <!--!Navbar Component -->
     <MyNavBar v-bind:searchedUser="props.searchedUser" />
 
-    <div class="grid grid-cols-2">
-        <div class="flex flex-col">
-            <h1
-                class="hover:animate__animated animate__zoomInDown p-1 font-serif text-3xl mb-3 text-center cursor-pointer underline decoration-1 text-emerald-600"
-            >
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:mx-6 md:grid-cols-2">
+        <div class="m-auto animate__animated animate__fadeIn animate__slow">
+            <h1 class="font-serif text-3xl text-center m-4 text-emerald-400">
                 Add Products
             </h1>
-            <Form />
+            <Form class="" />
             <!-- <Analytics :messages="messages" :analytics="props.analytics" /> -->
         </div>
-        <div class="grid text-center">
-            <div
-                class="flex place-items-center gap-3 justify-center mx-auto my-auto"
-            >
+        <div class="">
+            <div class="flex place-items-center justify-center">
                 <h1
-                    class="p-1 text-3xl font-serif cursor-pointer text-emerald-600"
+                    class="font-serif text-3xl text-center m-4 text-emerald-400"
                 >
                     Items In Stock ({{ props.analytics }})
                 </h1>
                 <a :href="route('export')">
                     <h1
-                        class="tp-1 text-2xl font-serif cursor-pointer underline decoration-1 text-emerald-600 bi bi-download"
+                        class="text-2xl font-serif cursor-pointer underline decoration-1 text-emerald-400 bi bi-download"
                     ></h1>
                 </a>
             </div>
-            <div
-                class="mx-auto my-auto gap-x-20 flex justify-between place-items-center"
-            >
+
+            <div class="mb-4 flex justify-evenly place-items-center">
                 <FilterOptions />
             </div>
 
             <!-- List Component -->
             <div
-                class="grid justify-center overflow-y-scroll gap-y-4 gap-x-4 mx-4 h-96 sm:grid-cols-1 md:grid-cols-2"
+                class="grid overflow-y-scroll gap-y-6 gap-x-6 p-2 h-96 sm:grid-cols-2 md:grid-cols-2"
             >
                 <div v-for="product in props.products" :key="product.id">
                     <Card :products="product" />
@@ -79,7 +73,7 @@ watch(
     </div>
 
     <!--!! This is the Floating Action button -->
-    <div class="fixed flex fixed-bottom m-6 justify-end p-2">
+    <div class="flex m-6 justify-end">
         <Link href="/chatify">
             <ChatBot />
         </Link>

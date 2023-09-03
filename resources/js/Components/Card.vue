@@ -25,49 +25,53 @@ const destroy = (id) => {
 <template>
     <div class="animate__animated animate__zoomIn">
         <div
-            class="container flex flex-col border border-spacing-2 my-auto py-2 rounded-xl  shadow-sm border-opacity-25 shadow-zinc-700 bg-white"
+            class="  hover:shadow-md duration-1000 outline outline-1 hover:outline-emerald-300 bg-white transition-all hover:shadow-emerald-300 rounded-xl"
         >
             <!-- the flex-row-1 -->
-            <div class="flex justify-between">
+            <div class="flex justify-between place-items-center">
                 <!-- Product Image component -->
                 <ProductImage
-                    class="animate__animated animate__fadeIn animate__slow"
+                    class="animate__animated animate__fadeIn object-cover animate__slow"
                     v-bind:Image="props.products.image"
                 />
-                <div class="flex py-6 flex-col">
-                    <div class="grow-0 h-2">
-                        <h5
-                            class="text-gray-900 text-xl text-start font-serif mx-2"
-                        >
-                            {{ props.products.name }}
-                        </h5>
-                        <h5
-                            class="text-gray-900 text-sm text-start font-light mx-2"
-                        >
-                            {{ props.products.category }}
-                        </h5>
-                        <h5
-                            class="text-gray-900 text-sm text-start font-light mx-2"
-                        >
-                            ETB
-                            {{
-                                Intl.NumberFormat("en-US").format(
-                                    props.products.price
-                                )
-                            }}
-                        </h5>
-                        <h5
-                            class="text-gray-900 text-sm text-start font-light mx-2"
-                        >
-                            {{ date }}
-                        </h5>
-                    </div>
+                <div
+                    class="container place-items-start max-h-screen object-fill flex flex-col m-auto flex-wrap"
+                >
+                    <h5
+                        class="text-gray-900 text-xl text-start font-serif mx-2"
+                    >
+                        {{ props.products.name }}
+                    </h5>
+                    <h5
+                        class="text-gray-900 text-sm text-start font-light mx-2"
+                    >
+                        {{ props.products.category }}
+                    </h5>
+                    <h5
+                        class="text-gray-900 text-sm text-start font-light mx-2"
+                    >
+                        ETB
+                        {{
+                            Intl.NumberFormat("en-US").format(
+                                props.products.price
+                            )
+                        }}
+                    </h5>
+                    <h5
+                        class="text-gray-900 text-sm text-start font-light mx-2"
+                    >
+                        {{ date }}
+                    </h5>
                 </div>
+
+                <!-- <div class="">
+                  
+                    </div> -->
                 <!--button for deleting a product -->
                 <div v-if="$page.props.auth.user.role == 'admin'">
                     <i
                         @click="destroy(props.products.id)"
-                        class="text-6xl text-green-900 cursor-pointer bi bi-x-circle text-opacity-30 hover:text-opacity-100 hover:text-red-900 hover:animate-pulse ml-6"
+                        class="text-6xl text-green-900 cursor-pointer bi bi-x-circle text-opacity-30 hover:text-opacity-100 hover:text-red-900 hover:animate-pulse"
                     ></i>
                 </div>
                 <div v-else>
@@ -76,7 +80,7 @@ const destroy = (id) => {
                     ></i>
                 </div>
             </div>
-            <div class="flex mt-20 justify-center">
+            <div class="flex justify-center place-items-center">
                 <div v-if="$page.props.auth.user.role == 'admin'">
                     <button
                         data-bs-toggle="modal"
@@ -99,5 +103,6 @@ const destroy = (id) => {
             </div>
         </div>
     </div>
+
     <MyModal :products="products" />
 </template>

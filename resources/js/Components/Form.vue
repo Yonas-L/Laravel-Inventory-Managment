@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grid md:grid-cols-1 sm:grid-cols-1 shadow-lg max-h-full mx-28 bg-white rounded-md shadow-1-strong border border-solid border-gray-300 p-7"
+        class="shadow-xl shadow-emerald-300 sm:scale-105 md:scale-105 md:scale-x-110 sm:scale-x-125 bg-white rounded-xl p-7"
     >
         <form @submit.prevent>
             <div class="form-floating mb-4 mt-4">
@@ -86,7 +86,7 @@
             </div>
             <!-- do storing logic -->
             <div class="flex">
-                <MyButton class="w-full " @click="addProduct" />
+                <MyButton class="w-full" @click="addProduct" />
             </div>
         </form>
     </div>
@@ -95,7 +95,6 @@
 <script setup>
 import { useForm } from "@inertiajs/inertia-vue3";
 import MyButton from "./MyButton.vue";
-
 
 const form = useForm({
     name: null,

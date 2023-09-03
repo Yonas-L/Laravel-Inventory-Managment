@@ -6,7 +6,7 @@ defineProps({
 
 </script>
 <template>
-  <img :src="Image"  class="rounded-full wrap w-20 h-20"  alt="Image"/>
+  <img :src="Image"  class="rounded-full   w-14 h-14"  alt="Image"/>
 </template>
 
 

@@ -1,4 +1,3 @@
-
 <script setup>
 import { useForm } from "@inertiajs/inertia-vue3";
 import MyButton from "@/Pages/Components/MyButton.vue";
@@ -30,7 +29,7 @@ const edit = (id) => {
 
 <template>
     <div
-        class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        class="modal sm:scroll-m-0 backdrop-blur backdrop-brightness-150 fixed top-0 left-0 fade hidden outline-none transition-all duration-500"
         :id="'_' + props.products.id"
         tabindex="-1"
         aria-labelledby="editProduct"
@@ -38,7 +37,7 @@ const edit = (id) => {
         role="dialog"
     >
         <div
-            class="modal-dialog modal-dialog-center modal-lg relative w-auto pointer-events-none"
+            class="modal-dialog modal-dialog-center modal-dialog-scrollable modal-lg relative w-auto pointer-events-none"
         >
             <div
                 class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
@@ -56,7 +55,6 @@ const edit = (id) => {
                         data-bs-dismiss="modal"
                         class="cursor-pointer hover:-rotate-45 hover:bg-slate-200 round hover:transition-all duration-500 hover:duration-500 btn-close box-content text-lg p-1 text-black border-none rounded-sm opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
                     />
-                  
                 </div>
                 <div class="flex">
                     <h5

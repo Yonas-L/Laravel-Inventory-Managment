@@ -27,7 +27,7 @@ const filterPrice = async () => {
             type="date"
             name="date"
             id="date"
-            class="border-gray-300 text-2xl bg-gray-100 text-opacity-30 w-auto h-10 cursor-pointer hover:underline decoration-1 text-emerald-700"
+            class="border-gray-300 text-2xl bg-gray-100 text-opacity-30 w-auto h-10 cursor-pointer hover:underline text-emerald-700"
         />
     </div>
     <div>
@@ -38,7 +38,7 @@ const filterPrice = async () => {
             type="range"
             min="0"
             max="100000"
-            class="w-72 bg-green-800 text-green-800"
+            class="w-auto scale-110 bg-green-800 text-green-800"
             name="priceRange"
             id="priceRange"
         />
