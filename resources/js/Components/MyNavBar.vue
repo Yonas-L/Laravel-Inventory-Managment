@@ -25,7 +25,7 @@ const searchAdmin = ()=>{
 <template>
   <div class="">
 
-    <nav class=" bg-transparent relative  p-2 ">
+    <nav class="  bg-transparent relative  p-2 ">
   <div class="container-fluid w-full justify-evenly flex  place-items-center  md:flex flex-wrap md:place-items-center md:justify-between px-2 sm:px-6 md:px-6">
       <!-- Application Logo  -->
     <div class="hover:opacity-20">

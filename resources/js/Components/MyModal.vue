@@ -22,7 +22,10 @@ const edit = (id) => {
     form.post(
         route("products.update", id, {
             forceFormData: true,
-        })
+            
+        }),{
+            preserveScroll:true
+        }
     );
 };
 </script>
@@ -37,10 +40,10 @@ const edit = (id) => {
         role="dialog"
     >
         <div
-            class="modal-dialog modal-dialog-center modal-dialog-scrollable modal-lg relative w-auto pointer-events-none"
+            class="p-7 modal-dialog modal-dialog-center  modal-dialog-scrollable  relative pointer-events-none"
         >
             <div
-                class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
+                class="modal-content modal-md  border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
             >
                 <div
                     class="modal-header flex flex-shrink-0 items-center justify-center p-4 border-b border-gray-200 rounded-t-md"
@@ -65,9 +68,9 @@ const edit = (id) => {
                     </h5>
                 </div>
 
-                <div class="modal-body relative p-4">
+                <div class="modal-body">
                     <div class="text-start">
-                        <h1 class="font-extrabold m-2">Images</h1>
+                        <h1 class="font-extralight text-green-900 m-2">Product Image</h1>
                         <div class="m-2">
                             <img
                                 class="rounded-lg"
@@ -158,7 +161,7 @@ const edit = (id) => {
                             />
                         </div>
                         <div
-                            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-center p-4 border-t border-gray-200 rounded-b-md"
+                            class=""
                         >
                             <MyButton @Click="edit(props.products.id)" />
                         </div>
