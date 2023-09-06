@@ -14,7 +14,7 @@ Users can chat with anyone they want in realtime #* Done
 Users can check their online status (Online or sometime ago) #* Done
 Make a sign-in option using 3rd parti API' #* Done
 Make a functionality for making a queed job for Exporting user data as CSV|XLS  #* Done
-Make the application Responsive for 3 devices. #? Ongoing
+Make the application Responsive for 3 devices. #* Done
 Build a Test for fetures and Unit. #? Ongoing
 Dockerise the whole application. #? Ongoing
 Deploy the application on HEROKU!! #? Ongoing
