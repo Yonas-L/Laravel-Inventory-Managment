@@ -25,9 +25,9 @@ const destroy = (id) => {
 </script>
 
 <template>
-    <div class="animate__animated animate__zoomIn">
+    <div class="container min-w-fit  max-w-md animate__animated animate__zoomIn">
         <div
-            class=" max-w-md p-1.5 m-auto rounded-xl hover:shadow-md duration-1000 outline outline-1 hover:outline-emerald-300 bg-white transition-all hover:shadow-emerald-300 sm:rounded-xl md:rounded-xl"
+            class="  px-1.5  rounded-xl hover:shadow-md duration-1000 outline outline-1 hover:outline-emerald-300 bg-white transition-all hover:shadow-emerald-300 sm:rounded-xl md:rounded-xl"
         >
             <!--! Image and Delete btn in one group -->
             <div class="flex justify-between place-items-stretch">
@@ -39,7 +39,7 @@ const destroy = (id) => {
                 <div v-if="$page.props.auth.user.role == 'admin'">
                     <i
                         @click="destroy(props.products.id)"
-                        class="md:text-5xl sm:text-4xl text-3xl text-red-900 cursor-pointer bi bi-x-circle text-opacity-30 duration-700 hover:text-opacity-100 hover:text-red-900"
+                        class="md:text-5xl sm:text-4xl w-fit text-3xl text-red-900 cursor-pointer bi bi-x-circle text-opacity-30 duration-700 hover:text-opacity-100 hover:text-red-900"
                     ></i>
                 </div>
                 <div v-else>

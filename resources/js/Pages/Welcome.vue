@@ -36,7 +36,7 @@ watch(
     <MyNavBar v-bind:searchedUser="props.searchedUser" />
 
     <div class="grid grid-cols-1 sm:grid-cols-1 md:mx-6 md:grid-cols-2">
-        <div class="m-auto animate__animated animate__zoomIn  animate__slow">
+        <div class="m-auto animate__animated animate__zoomIn animate__slow">
             <h1 class="font-serif text-3xl text-center m-4 text-emerald-400">
                 Add Products
             </h1>
@@ -57,13 +57,13 @@ watch(
                 </a>
             </div>
 
-            <div class="mb-4 flex justify-evenly place-items-center">
+            <div class="mb-4">
                 <FilterOptions />
             </div>
 
             <!-- List Component -->
             <div
-                class="grid overflow-y-scroll gap-y-6 gap-x-6 p-2 grid-cols-1 h-96 sm:grid-cols-2 md:grid-cols-2"
+                class="grid overflow-y-scroll gap-y-6 p-2 grid-cols-1 h-96 sm:grid-cols-2 md:grid-cols-2"
             >
                 <div v-for="product in props.products" :key="product.id">
                     <Card :products="product" />
@@ -73,11 +73,12 @@ watch(
     </div>
 
     <!--!! This is the Floating Action button -->
-    <div class="flex  m-6 justify-end">
+    <div class="flex fixed-bottom m-6 justify-end">
         <Link href="/chatify">
             <ChatBot />
         </Link>
     </div>
+    
     <!-- Footer section -->
     <Footer />
 </template>
