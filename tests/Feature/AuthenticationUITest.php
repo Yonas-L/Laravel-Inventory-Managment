@@ -37,4 +37,11 @@ class AuthenticationUITest extends TestCase
         $response->assertSee('branch');
         $response->assertSee('password');
     }
+
+    public function test_forgot_password_view_works(){
+        $response=$this->get('forgot-password');
+        $response->assertSuccessful();
+        $response->assertSee('email');
+        $this->assertGuest();
+    }
 }
