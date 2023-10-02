@@ -39,6 +39,7 @@ class UserRegistrationTest extends TestCase
         ]);
 
         $response->assertInvalid('email');
+        
     }
     
 }

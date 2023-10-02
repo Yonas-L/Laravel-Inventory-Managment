@@ -49,6 +49,7 @@ Route::get('/dashboard', function () {
 
 // Product defined API endpoints'
 Route::resource('products', ProductController::class);
+Route::put('product/update/{id}', [productController::class, 'update'])->name('updateProduct');
 
 // Email verification Notice
 Route::get('/email/verify', function () {
