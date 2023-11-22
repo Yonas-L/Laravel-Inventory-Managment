@@ -40,10 +40,10 @@ const edit = (id) => {
         role="dialog"
     >
         <div
-            class="p-7 modal-dialog modal-dialog-center  modal-dialog-scrollable  relative pointer-events-none"
+            class="p-7 modal-lg modal-dialog modal-dialog-center moda-lg  modal-dialog-scrollable  relative pointer-events-none"
         >
             <div
-                class="modal-content modal-md  border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
+                class="modal-content modal-md  border-none shadow-lg relative  pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
             >
                 <div
                     class="modal-header flex flex-shrink-0 items-center justify-center p-4 border-b border-gray-200 rounded-t-md"
